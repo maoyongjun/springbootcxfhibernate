@@ -11,7 +11,7 @@ import javax.jws.WebService;
 * 创建时间：2018年5月12日 下午7:06:05
 */
 @WebService(name = "CommonService", // 暴露服务名称
-targetNamespace = "http://webservice.leftso.com/"// 命名空间,一般是接口的包名倒序
+targetNamespace = "http://webservice.foxconn.org/"// 命名空间,一般是接口的包名倒序
 )
 public interface CommonService {
 @WebMethod
