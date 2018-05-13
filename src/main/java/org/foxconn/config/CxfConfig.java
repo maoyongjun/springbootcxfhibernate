@@ -48,4 +48,5 @@ public class CxfConfig {
 		return restFactory;
 	}
 
+	
 }

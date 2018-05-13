@@ -11,9 +11,9 @@ import org.foxconn.service.CommonService;
 * 创建时间：2018年5月12日 下午7:15:34
 */
 public class CxfClient {
-	public static void main(String[] args) {
-		cl1();
-	}
+//	public static void main(String[] args) {
+//		cl1();
+//	}
 
 	/**
 	 * 方式1.代理类工厂的方式,需要拿到对方的接口

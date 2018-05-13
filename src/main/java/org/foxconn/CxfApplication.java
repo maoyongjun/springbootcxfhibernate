@@ -7,8 +7,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@EnableJpaRepositories(basePackages = "org.justin.hibernateTest.dao")
-@EntityScan(basePackages = "org.justin")
+@EnableJpaRepositories(basePackages = "org.foxconn.dao")
+@EntityScan(basePackages = "org.foxconn")
 public class CxfApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CxfApplication.class,args);
