@@ -30,7 +30,7 @@ public class NeoSender {
 	    
 	    public void send(String code){
 	    	 System.out.println("Sender : "+ code);
-	    	 this.rabbitTemplate.convertAndSend("code", code);
+	    	 this.rabbitTemplate.convertAndSend("msg", code);
 	    }
 	    
 	   

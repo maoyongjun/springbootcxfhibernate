@@ -99,6 +99,10 @@ public class RabbitConfig {
     public Queue Queue() {
         return new Queue("hello");
     }
+    @Bean
+    public Queue msg() {
+        return new Queue("msg");
+    }
     
     @Bean
     public MessageConverter messageConverter() {

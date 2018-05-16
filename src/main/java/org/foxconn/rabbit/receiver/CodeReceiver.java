@@ -16,4 +16,9 @@ public class CodeReceiver {
 	public void process(User  user) {
 		System.out.println("Receiver  : " +user);
 	}
+	@RabbitHandler
+	@RabbitListener(queues = "msg")
+	public void process2(String msg) {
+		System.out.println("Receiver  : " +msg);
+	}
 }

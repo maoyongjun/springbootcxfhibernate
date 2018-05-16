@@ -24,5 +24,6 @@ public class RabbitServiceImpl {
 		User user = new User();
 		user.setUsername(msg);
 		neoSender.send(user);
+		neoSender.send("{username:abc}");
 	}
 }
