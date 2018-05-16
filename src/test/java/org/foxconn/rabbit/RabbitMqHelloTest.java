@@ -26,10 +26,10 @@ public class RabbitMqHelloTest {
 
     @Test
     public void hello() throws Exception {
-//        helloSender.send();
+        helloSender.send();
 //    	helloSender.send1();
 //    	helloSender.send2();
-    	helloSender.send3();
+//    	helloSender.send3();
         
     }
     

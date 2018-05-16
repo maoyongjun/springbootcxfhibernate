@@ -10,6 +10,7 @@ import org.apache.cxf.jaxws.EndpointImpl;
 import org.foxconn.service.CommonService;
 import org.foxconn.service.RestService;
 import org.foxconn.service.impl.RestServiceImpl;
+import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

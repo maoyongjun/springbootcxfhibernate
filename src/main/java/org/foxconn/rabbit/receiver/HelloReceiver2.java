@@ -12,10 +12,10 @@ import org.springframework.stereotype.Component;
 @Component
 //@RabbitListener(queues = "hello")
 //@RabbitListener(queues = "topic.messages")
-@RabbitListener(queues = "fanout.C")
 public class HelloReceiver2 {
 
     @RabbitHandler
+    @RabbitListener(queues = "fanout.C")
     public void process(String hello) {
         System.out.println("Receiver2  : " + hello);
     }

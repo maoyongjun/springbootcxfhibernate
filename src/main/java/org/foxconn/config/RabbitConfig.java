@@ -5,6 +5,13 @@ import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.FanoutExchange;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.core.TopicExchange;
+import org.springframework.amqp.rabbit.annotation.EnableRabbit;
+import org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory;
+import org.springframework.amqp.rabbit.connection.ConnectionFactory;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.amqp.support.converter.ContentTypeDelegatingMessageConverter;
+import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
+import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -16,9 +23,16 @@ import org.springframework.context.annotation.Configuration;
 * 创建时间：2018年5月16日 下午8:22:53
 */
 @Configuration
+@EnableRabbit
 public class RabbitConfig {
 	final static String message = "topic.message";
     final static String messages = "topic.messages";
+    
+    
+    @Bean
+    public Queue codeMessage() {
+        return new Queue("code");
+    }
     //topic模式
     @Bean
     public Queue queueMessage() {
@@ -86,5 +100,16 @@ public class RabbitConfig {
         return new Queue("hello");
     }
     
+    @Bean
+    public MessageConverter messageConverter() {
+        return new Jackson2JsonMessageConverter();
+    }
 
+    @Bean
+    public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory, MessageConverter messageConverter) {
+        RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory);
+        rabbitTemplate.setMessageConverter(messageConverter);
+        return rabbitTemplate;
+    }
+    
 }
